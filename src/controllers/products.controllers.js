@@ -11,3 +11,4 @@ exports.getproducts = async(req,res)=>{
     let data = await Products.find()
     res.json({msg:"data getting successfully",data})
 }
+

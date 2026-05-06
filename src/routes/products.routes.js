@@ -2,7 +2,7 @@ const express = require("express")
 
 const router = express.Router()
 
-const {createproducts,getproducts} = require("../controllers/products.controllers")
+const {createproducts,getproducts,add} = require("../controllers/products.controllers")
 
 router.post("/create",createproducts)
 
