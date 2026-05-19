@@ -1,12 +1,12 @@
 const wishlist = require("../models/wishlist")
 
 exports.wishlist_add = async (req, res) => {
-  let { userId, productId, producttype } = req.body
+  let { userId, productId, producttype,productModel } = req.body
   const existdata = await wishlist.findOne({ userId, productId })
   if (existdata) {
     return res.json({ msg: "Products Already exists", existdata })
   }
-  let data = new wishlist({ userId, productId, producttype })
+  let data = new wishlist({ userId, productId, producttype,productModel })
   await data.save()
   res.json({ msg: "Data Posted in wishlist", data })
 }
@@ -16,3 +16,7 @@ exports.wishlist_get = async (req, res) => {
   res.json({ msg: "Wishlist Get Successfully", data })
 }
 
+exports.wishlist_get_data = async (req, res) => {
+  const data = await wishlist.find().populate("productId")
+  res.json({ msg: "Wishlist Get Successfully", data })
+}

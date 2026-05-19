@@ -2,61 +2,61 @@ const mongoose = require("mongoose")
 
 const ProductSchema = new mongoose.Schema({
 
-     title:{
-        type:String,
-        required:true
+    title: {
+        type: String,
+        required: true
     },
 
-    brand:{
-        type:String,
-        required:true
+    brand: {
+        type: String,
+        required: true
     },
 
-    category:String,
+    category: String,
 
-    model:String,
+    model: String,
 
-    price:{
-        type:Number,
-        required:true
+    price: {
+        type: Number,
+        required: true
     },
 
-    discountPrice:Number,
+    discountPrice: Number,
 
-    description:String,
-    story:String,
+    description: String,
+    story: String,
 
-    thumbnail:String,
+    thumbnail: String,
 
-    video:String,
+    video: String,
 
-    images:[String],
+    images: [String],
 
-    highlights:[String],
+    highlights: [String],
 
-    features:{
-        movement:String,
-        caseMaterial:String,
-        strap:String,
-        waterResistance:String,
-        glass:String,
-        dialColor:String,
-        powerReserve:String,
-        warranty:String
+    features: {
+        movement: String,
+        caseMaterial: String,
+        strap: String,
+        waterResistance: String,
+        glass: String,
+        dialColor: String,
+        powerReserve: String,
+        warranty: String
     },
 
-    dimensions:{
-        caseSize:String,
-        thickness:String,
-        weight:String
+    dimensions: {
+        caseSize: String,
+        thickness: String,
+        weight: String
     },
 
-    stock:Number,
+    stock: Number,
 
-    ratings:Number,
+    ratings: Number,
 
-},{timestamps:true})
+}, { timestamps: true })
 
-const Premium = new mongoose.model("premimum",ProductSchema)
+const Premium = new mongoose.model("premimum", ProductSchema)
 
-module.exports=Premium
+module.exports = Premium

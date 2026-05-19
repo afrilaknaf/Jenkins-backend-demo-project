@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const Products = require("./product")
 
 const wishlist_Schema = mongoose.Schema({
     userId:{
@@ -8,12 +9,18 @@ const wishlist_Schema = mongoose.Schema({
     },
     productId:{
         type:mongoose.Schema.Types.ObjectId,
-        required:true
+        required:true,
+        refPath:"productModel"
     },
     producttype:{
         type:String,
         enum:["premium","normal"],
         required:true
+    },
+    productModel:{
+        type:String,
+        required:true,
+        enum:["premimum","products"]
     }
 },{timestamps:true})
 
