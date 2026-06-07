@@ -48,6 +48,12 @@ const wishlist = require("./src/routes/wishlist.routes")
 
 app.use("/wishlist", wishlist)
 
+//cart
+
+const cart = require("./src/routes/cart.routes")
+
+app.use("/cart",cart)
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

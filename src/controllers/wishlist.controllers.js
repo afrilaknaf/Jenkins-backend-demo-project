@@ -20,3 +20,9 @@ exports.wishlist_get_data = async (req, res) => {
   const data = await wishlist.find().populate("productId")
   res.json({ msg: "Wishlist Get Successfully", data })
 }
+
+exports.wishlist_delete = async (req,res)=>{
+  const {id} = req.params
+  const data = await wishlist.findByIdAndDelete(id)
+  res.json({msg:"Products Delete",data})
+}
