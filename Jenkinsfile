@@ -23,19 +23,28 @@ pipeline{
 
         stage("Install"){
             steps{
-                bat npm install
+                bat '''  
+                echo Node js install
+                npm install
+                '''
             }
         }
 
         stage("Test"){
             steps{
-                bat npm test
+                bat '''  
+                echo Node js test
+                npm test
+                '''
             }
         }
 
         stage("Build"){
             steps{
-                bat  node --check index.js
+                bat  '''  
+                echo Node js Build
+                node --check index.js
+                '''
             }
         }
     }
